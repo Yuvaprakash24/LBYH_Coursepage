@@ -64,3 +64,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+$(document).ready(function () {
+    // Initialize carousel
+    $('#carouselTutorsIndicators').carousel();
+
+    // Set the initial active button
+    setActiveButton(0);
+
+    // Handle slide event to update active button
+    $('#carouselTutorsIndicators').on('slide.bs.carousel', function (event) {
+      var index = event.to;
+      setActiveButton(index);
+    });
+  });
+
+  function setActiveButton(index) {
+    // Remove active class from all buttons
+    $('.btn-group .btn').removeClass('active');
+    // Add active class to the specified button
+    $('.btn-group .btn:eq(' + index + ')').addClass('active');
+  }
