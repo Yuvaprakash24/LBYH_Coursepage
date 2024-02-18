@@ -54,6 +54,7 @@
   
   .btn-group .btn.active {
     color: green; 
+    font-weight: bold;
   }
   
   .btn-group .btn:hover{
